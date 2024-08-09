@@ -60,6 +60,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	Novice::Finalize();
 	return 0;
 }
+//演算子オーバーロード
+
+
+
+
 	// 行列たし算
 	Matrix4x4 Add(const Matrix4x4& m1, const Matrix4x4& m2) {
 		Matrix4x4 result;
@@ -109,9 +114,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	    return result;
     }
-	const Vector3 Multiply(float scalar,  const Vector3& v) {
-			return { scalar * v.x, scalar * v.y, scalar * v.z};
-
+	const Matrix4x4 Multiply(Matrix4x4 v1,  const Matrix4x4& v2) {
+			//return { scalar * v.x, scalar * v.y, scalar * v.z};
+	    Matrix4x4 result;
+	    result.m[0][0] = v1.m[0][0] * v2.m[0][0];
 	}
 
 	Matrix4x4  Inverse(const Matrix4x4& m) {
