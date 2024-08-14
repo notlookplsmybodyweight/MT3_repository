@@ -117,7 +117,13 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	const Matrix4x4 Multiply(Matrix4x4 v1,  const Matrix4x4& v2) {
 			//return { scalar * v.x, scalar * v.y, scalar * v.z};
 	    Matrix4x4 result;
-	    result.m[0][0] = v1.m[0][0] * v2.m[0][0];
+	    result.m[0][0] = v1.m[0][0]*v2.m[0][0] + v1.m[0][1]*v2.m[1][0] + v1.m[0][2]*v2.m[2][0]+v1.m[0][3]*v2.m[3][0];
+	    result.m[0][1] = v1.m[1][0]*v2.m[0][0] + v1.m[1][1]*v2.m[1][0] + v1.m[1][2]*v2.m[2][0]+v1.m[1][3]*v2.m[3][0];
+	    result.m[0][2] = v1.m[2][0]*v2.m[0][0] + v1.m[2][1]*v2.m[1][0] + v1.m[2][2]*v2.m[2][0]+v1.m[2][3]*v2.m[3][0];
+	    result.m[0][3] = v1.m[3][0]*v2.m[0][0] + v1.m[3][1]*v2.m[1][0] + v1.m[3][2]*v2.m[2][0]+v1.m[3][3]*v2.m[3][0];
+
+
+
 	}
 
 	Matrix4x4  Inverse(const Matrix4x4& m) {
